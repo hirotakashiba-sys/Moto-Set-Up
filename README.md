@@ -27,28 +27,4 @@ Moto Set Upは、モトジムカーナ競技者向けの高度なモーターサ
 * オフライン環境（山奥の練習会場など）でも動作するよう、データはすべてデバイス内（`SharedPreferences`）に保存されます。
 * JSONテキスト形式でクリップボードへExport/Importでき、機種変更時の移行やデータのバックアップが容易です。
 
----
 
-## 🛠 技術スタック (Tech Stack)
-
-* **Framework:** Flutter (Dart)
-* **State Management:** Riverpod (`flutter_riverpod`)
-* **Local Storage:** SharedPreferences (`shared_preferences`)
-* **Data Visualization:** FL Chart (`fl_chart`)
-* **Network / API:** HTTP (`http`) / OpenStreetMap Nominatim API, Open-Meteo API
-
----
-
-## 📁 ディレクトリ構造 (Directory Structure)
-
-クリーンアーキテクチャの思想に基づき、UI（Screens/Widgets）、状態管理（Providers）、データ（Models）、ロジック（Services/Utils）を分離しています。
-
-```text
-lib/
- ├── main.dart
- ├── models/                 # データモデル (Bike, Tire, Location, HistorySession)
- ├── providers/              # Riverpodの状態管理 (StateNotifier)
- ├── screens/                # 画面UI (Garage, Master, Session)
- ├── services/               # 外部API通信、プロンプト生成 (Weather, AI)
- ├── utils/                  # 複雑な数学的計算 (GeometryEngine)
- └── widgets/                # 再利用可能なUIコンポーネント (Charts, Accordions, etc.)
